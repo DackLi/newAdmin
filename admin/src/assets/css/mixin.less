@@ -1,0 +1,78 @@
+// ----------------- 全局less函数 -------------------- //
+// flex 父元素
+.display-flex() {
+  display: flex;
+}
+
+// flex 上下居中
+.justify-content (@direction) {
+  justify-content: @direction
+}
+
+// flex 左右居中
+.align-items(@direction) {
+  align-items: @direction
+}
+
+// 上下左右居中
+.flex-center() {
+  .display-flex;
+  .justify-content(center);
+  .align-items(center);
+}
+// 底部一像素边框
+.border-1px(@color) {
+  position: relative;
+    &::after {
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      border-top: 1px solid  @color;
+      content: "";
+    }
+}
+
+// Rem 转换
+@baseFontSize: 75;
+.px2rem(@name, @px){
+  @{name}: @px / @baseFontSize * 1rem;
+}
+
+// 文字溢出省略号
+.text-hidden(@number) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @number;
+  overflow: hidden;
+}
+
+// 清除浮动
+.clearfix() {
+  &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+}
+
+// 相对定位
+.relative() {
+  position: relative;
+}
+// 绝对定位
+.absolute() {
+  position: absolute;
+}
+
+// 圆角
+.borderRadius() {
+  border-radius: 5px;
+}
+
+// 设置宽高
+.setWidthHeight(@widht,@height) {
+  width: @widht;
+  height: @height;
+}

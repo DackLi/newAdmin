@@ -4,7 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Vuex from 'vuex'
-import { Button, Select, Row, Col, Form, FormItem, Tabs, TabPane } from 'element-ui'
+import { Button, Select, Row, Col, Form, FormItem, Tabs, TabPane, Checkbox, Input, MenuItem, MenuItemGroup } from 'element-ui'
+import 'normalize.css/normalize.css' // normalize.css 样式格式化
 
 // 取消vue打印 警告
 Vue.config.productionTip = false
@@ -13,7 +14,7 @@ Vue.config.productionTip = false
 Vue.use(Vuex)
 
 // 全局注册 eleUi
-Vue.use(Button).use(Select).use(Row).use(Col).use(Form).use(FormItem).use(Tabs).use(TabPane)
+Vue.use(Button).use(Select).use(Row).use(Col).use(Form).use(FormItem).use(Tabs).use(TabPane).use(Checkbox).use(Input).use(MenuItem).use(MenuItemGroup)
 
 /* eslint-disable no-new */
 new Vue({
