@@ -24,6 +24,7 @@ instance.interceptors.request.use(
       // 在data当中存在数组的话需要加上{arrayFormat: 'brackets'} 否则提交时数组会显示下标
       config.data = qs.stringify(config.data, { arrayFormat: 'brackets' })
     }
+    return config
   },
   error => {
     // 当出现请求错误是做一些事
@@ -44,7 +45,6 @@ instance.interceptors.response.use(
     return data
   },
   err => {
-    console.log('错误数据：' + err + err.response)
     if (err && err.response) {
       switch (err.response.status) {
         case 302:

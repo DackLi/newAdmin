@@ -53,6 +53,7 @@ export default {
         if (formData.validates) {
           formData.param.flags = true
           vm.$store.dispatch('Login', formData.param).then((res) => {
+            vm.$router.push({ path: '/' })
             // vm.$store.dispatch('GetInfo').then(res => { // 拉取user_info
             //   vm.$router.push({ path: '/' })
             // }).catch(err => {

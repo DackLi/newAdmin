@@ -43,9 +43,18 @@ const user = {
       return new Promise((resolve, reject) => {
         console.log('登录入参：', userInfo)
         instance.post(ApiUrl.loginUrl, userInfo).then(res => {
-          if (res.status === 200 && res.data.success) {
-            Cookies.set('userName', userInfo.account, { expires: 14, path: '' }) // 设置token
-            commit('SET_UID', userInfo.account) // 修改用户
+          if (res.status === 200 && res.data.status === 200) {
+            console.log(res)
+            Cookies.set('userName', userInfo.user, { expires: 14, path: '' }) // 设置token
+            Cookies.set('refresh', true)
+            if (userInfo.checked) {
+              Cookies.set('password', userInfo.password, { expires: 14, path: '' })
+              commit('SET_PWD', userInfo.password) // 修改密码
+            } else {
+              Cookies.set('password', '') // 设置密码
+              commit('SET_PWD', '') // 修改密码
+            }
+            commit('SET_UID', userInfo.user) // 修改用户
             resolve()
           } else {
             reject(res)
