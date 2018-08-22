@@ -46,7 +46,12 @@ module.exports = {
       // @代表src
       '@': resolve('src'),
       // assets
-      'assets': resolve('src/assets')
+      'assets': resolve('src/assets'),
+      // assets
+      'utils': path.resolve(__dirname, '../src/utils'),
+      'global': resolve('src/global'),
+      'router': resolve('src/router'),
+      'store': resolve('src/store')
     }
   },
   // 模块化加载juery  const $ = require("jquery")
