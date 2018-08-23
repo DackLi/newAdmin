@@ -45,7 +45,7 @@ const user = {
         instance.post(ApiUrl.loginUrl, userInfo).then(res => {
           if (res.status === 200 && res.data.status === 200) {
             console.log(res)
-            Cookies.set('userName', userInfo.user, { expires: 14, path: '' }) // 设置token
+            Cookies.set('uid', userInfo.user, { expires: 14, path: '' }) // 设置token
             Cookies.set('refresh', true)
             if (userInfo.checked) {
               Cookies.set('password', userInfo.password, { expires: 14, path: '' })

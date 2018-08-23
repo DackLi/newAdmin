@@ -22,7 +22,7 @@
 <script>
 import { validate } from 'utils/validate'
 import { Message } from 'element-ui'
-// import Cookies from 'js-cookie'
+import Cookies from 'js-cookie'
 export default {
   data () {
     return {
@@ -39,6 +39,15 @@ export default {
           {required: true, trigger: 'blur', validator: validate.validatePass}
         ]
       }
+    }
+  },
+  beforeMount: function () {
+    if (Cookies.get('password') && Cookies.get('uid')) {
+      this.loginForm.password = Cookies.get('password')
+      this.loginForm.user = Cookies.get('uid')
+    } else {
+      this.loginForm.password = ''
+      this.loginForm.user = ''
     }
   },
   components: {
