@@ -9,6 +9,7 @@ import instance from 'global/http'
 import ApiUrl from 'global/api'
 import router from 'router'
 import Cookies from 'js-cookie'
+// import { Message } from 'element-ui'
 
 const user = {
   // state状态 类似于vue中的data
@@ -64,11 +65,7 @@ const user = {
       })
     },
     // 获取用户信息
-    GetInfo ({
-      dispatch,
-      commit,
-      state
-    }) {
+    GetInfo ({dispatch, commit, state}) {
       let params = {}
       params.userId = state.uid
       return Promise((resolve, reject) => {
@@ -88,6 +85,26 @@ const user = {
             return false
           }
         }))
+      })
+    },
+    loginOut ({ commit }) {
+      return new Promise((resolve, reject) => {
+        let param = {}
+        param.flags = true
+        instance.post(ApiUrl.loginOut).then(res => {
+          if (res.status === 200 && res.status === 200) {
+            console.log(res)
+            Cookies.remove('refresh') // 移除刷新
+            commit('SET_UID', '') // 清楚用户信息
+            // 跳转到登录页面
+            router.replace({
+              path: '/login'
+            })
+            resolve() // 异步完成
+          } else {
+            reject(res)
+          }
+        })
       })
     }
   }

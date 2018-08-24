@@ -5,12 +5,13 @@
 </template>
 
 <script>
+import './assets/css/reset.css'
 export default {
   name: 'App'
 }
 </script>
 
-<style>
+<style scoped lang="less" rel="stylesheet/less">
   #app {
     height: 100vh;
   }

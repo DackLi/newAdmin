@@ -5,7 +5,8 @@
  */
 const BASEURL = 'https://www.easy-mock.com/mock/5b7d154cf894321ec45f8f17/vueAdmin'
 const APIURL = {
-  loginUrl: `${BASEURL}/login`
+  loginUrl: `${BASEURL}/login`,
+  loginOut: `${BASEURL}/loginOut`
 }
 
 module.exports = APIURL
