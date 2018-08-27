@@ -23,6 +23,7 @@ export default {
 <style scoped lang="less" rel="stylesheet/less">
   .el-main {
     background-color: #e9ecf3;
+    padding: 15px;
   }
   .el-container {
     height: 100%;

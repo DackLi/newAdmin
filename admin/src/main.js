@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import store from './store'
 import Cookies from 'js-cookie'
-import { Button, Select, Row, Col, Form, FormItem, Tabs, TabPane, Checkbox, Input, MenuItem, MenuItemGroup, Container, Header, Aside, Main, Footer, Submenu, Menu } from 'element-ui'
+import { Button, Select, Radio, Row, Col, Form, FormItem, Tabs, TabPane, Checkbox, Input, MenuItem, MenuItemGroup, Container, Header, Aside, Main, Tree, Footer, Submenu, Menu, Loading, Table, TableColumn, dialog } from 'element-ui'
 import 'normalize.css/normalize.css' // normalize.css 样式格式化
 
 // 取消vue打印 警告
@@ -13,7 +13,7 @@ Vue.config.productionTip = false
 
 // 注册 需求eleUi组件
 Vue.use(Button).use(Select).use(Row).use(Col).use(Form).use(FormItem).use(Tabs).use(TabPane).use(Checkbox).use(Input).use(MenuItem).use(MenuItemGroup).use(Container).use(Header).use(Aside).use(Main).use(Footer)
-Vue.use(Submenu).use(Menu)
+Vue.use(Submenu).use(Menu).use(Loading).use(Table).use(TableColumn).use(dialog).use(Tree).use(Radio)
 // 遍历vuex的权限列表，假如去到的路径未在true列表中，则直接重定向到401。
 const whiteList = ['/login'] // 不重定向白名单
 

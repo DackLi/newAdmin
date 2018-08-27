@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Login from '@/view/login/login'
 import Layout from '@/view/layout/layout'
 import Role from '@/view/system/role'
+import setMenu from '@/view/system/setMenu'
 
 Vue.use(Router)
 
@@ -21,7 +22,8 @@ const constantRouterMap = [
     name: '系统管理',
     component: Layout,
     children: [
-      { path: '/role', name: '角色管理', component: Role } // 角色管理
+      { path: 'role', name: '角色管理', component: Role }, // 角色管理
+      { path: 'setMenu', name: '菜单管理', component: setMenu } // 菜单管理
     ]
   }
 ]

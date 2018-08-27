@@ -2,6 +2,7 @@
   <div class="login-warp">
     <header class="login-header">登录头部</header>
     <div class="login-body">
+      <!-- 头部搜索 -->
       <el-form label-position="right" label-width="80px" ref="loginForm" :model="loginForm" :rules="LoginRules">
         <el-form-item label="账号：" prop="user">
           <el-input v-model="loginForm.user" placeholder="账号" clearable></el-input>
@@ -10,12 +11,13 @@
           <el-input v-model="loginForm.password" type="password"  placeholder="密码" clearable></el-input>
         </el-form-item>
         <el-form-item class="sub-btn">
-          <el-button type="primary" @click="submitLogin">登录</el-button>
+          <el-button type="primary" @click="submitLogin" v-loading.fullscreen.lock="fullscreenLoading">登录</el-button>
         </el-form-item>
         <el-checkbox v-model="loginForm.checked">记住密码</el-checkbox>
         <router-link to="/sendpwd" class="forget-pwd">忘记密码</router-link>
       </el-form>
     </div>
+    <!-- 新增弹框 -->
   </div>
 </template>
 

@@ -1,0 +1,81 @@
+@import '~assets/css/variable';
+// box样式
+.box {
+  background-color: #fff;
+  border: 1px solid #e9e9e9;
+  .header {
+    padding: 10px;
+    border-bottom: 1px solid #e9e9e9;
+    .title {
+      font-size: 20px;
+    }
+  }
+  .body {
+    padding: 10px;
+  }
+}
+// 搜索条件样式
+.filter-container {
+  border: 1px solid #e9e9e9;
+  padding: 15px 15px 0 15px;
+  margin-bottom: 15px;
+  .filter-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+  }
+  .el-form-item {
+    margin-bottom: 5px;
+  }
+}
+
+// 滚动条样式
+ /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
+ ::-webkit-scrollbar  {  
+     width: 8px;  
+     height: 8px;  
+     background-color: #F5F5F5;  
+     cursor: pointer;
+ }  
+   
+ /*定义滚动条轨道 内阴影+圆角*/  
+ ::-webkit-scrollbar-track  {  
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
+     border-radius: 10px;  
+     background-color: #F5F5F5;  
+ }  
+   
+ /*定义滑块 内阴影+圆角*/  
+ ::-webkit-scrollbar-thumb  {  
+     border-radius: 10px;  
+     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
+     background-color: #B4B4B4;  
+ } 
+
+
+// 重置ele UI样式
+
+// table 边框
+.el-table {
+  border: 1px solid #e9e9e9;
+  border-bottom: none;
+}
+// 弹框头部标题背景颜色
+.el-dialog__header {
+  padding: 10px 20px;
+  background-color: @bgcolor;
+  .el-dialog__title {
+    color: #fff;
+  }
+  .el-dialog__headerbtn {
+    top: 13px;
+    .el-dialog__close {
+      color: #fff;
+    }
+  }
+}
+
+// 弹框提交表单 最后为按钮时取消 margin-bottom
+.dialog-footer-btn {
+  margin-bottom: 0; 
+}

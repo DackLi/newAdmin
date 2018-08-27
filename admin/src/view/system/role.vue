@@ -1,6 +1,8 @@
 <template>
-  <div>
-    角色管理5454545
+  <div class="app-main">
+    <div class="">
+      角色管理5454545
+    </div>
   </div>
 </template>
 
