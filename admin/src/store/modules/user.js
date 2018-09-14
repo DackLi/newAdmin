@@ -92,14 +92,15 @@ const user = {
         let param = {}
         param.flags = true
         instance.post(ApiUrl.loginOut).then(res => {
+          console.log(123123)
           if (res.status === 200 && res.status === 200) {
-            console.log(res)
             Cookies.remove('refresh') // 移除刷新
             commit('SET_UID', '') // 清楚用户信息
             // 跳转到登录页面
             router.replace({
               path: '/login'
             })
+            console.log('退出了')
             resolve() // 异步完成
           } else {
             reject(res)

@@ -35,7 +35,7 @@ instance.interceptors.request.use(
 // 添加一个返回拦截器
 instance.interceptors.response.use(
   data => {
-    console.log('返回数据：' + data)
+    console.log('返回数据：', data)
     if (data.data.status && data.data.status === 401) {
       // Cookies.remove('refresh')// 移除刷新
       store.commit('SET_USERINFO', '') // 修改用户

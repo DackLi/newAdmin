@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import './assets/css/reset.css'
 import './assets/css/common.less'
 export default {
   name: 'App'

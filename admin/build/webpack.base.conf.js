@@ -47,9 +47,10 @@ module.exports = {
       '@': resolve('src'),
       // assets
       'assets': resolve('src/assets'),
-      // assets
+      // utils
       'utils': path.resolve(__dirname, '../src/utils'),
       'global': resolve('src/global'),
+      'components': resolve('src/components'),
       'router': resolve('src/router'),
       'store': resolve('src/store')
     }

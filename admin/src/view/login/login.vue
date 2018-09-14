@@ -40,7 +40,8 @@ export default {
         password: [
           {required: true, trigger: 'blur', validator: validate.validatePass}
         ]
-      }
+      },
+      fullscreenLoading: false
     }
   },
   beforeMount: function () {
@@ -63,7 +64,9 @@ export default {
       validate.isValidate(vm, 'loginForm', (formData) => {
         if (formData.validates) {
           formData.param.flags = true
+          this.fullscreenLoading = true
           vm.$store.dispatch('Login', formData.param).then((res) => {
+            this.fullscreenLoading = false
             vm.$router.push({ path: '/' })
             // vm.$store.dispatch('GetInfo').then(res => { // 拉取user_info
             //   vm.$router.push({ path: '/' })

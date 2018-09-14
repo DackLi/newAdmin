@@ -1,7 +1,9 @@
 <template>
   <el-main>
     <transition name="fade" mode="out-in">
-      <router-view :key="key"></router-view>
+      <keep-alive>
+        <router-view :key="key"></router-view>
+      </keep-alive>
     </transition>
   </el-main>
 </template>
@@ -25,6 +27,7 @@ export default {
     background: #fff;
     padding: 10px;
     transition: all .28s ease-out;
+    box-sizing: border-box;
   }
 /* 点击菜单中间的部分 淡入淡出的效果 start */
 .fade-enter-active{

@@ -5,8 +5,14 @@
  */
 const BASEURL = 'https://www.easy-mock.com/mock/5b7d154cf894321ec45f8f17/vueAdmin'
 const APIURL = {
-  loginUrl: `${BASEURL}/login`,
-  loginOut: `${BASEURL}/loginOut`
+  loginUrl: `${BASEURL}/login`, // 登录
+  loginOut: `${BASEURL}/loginOut`, // 退出
+  addMenu: `${BASEURL}/addMenu`, // 添加菜单
+  deleteMenu: `${BASEURL}/deleteMenu`, // 添加菜单
+  menuTableList: `${BASEURL}/menuTableList`, // 菜单表格数据
+  roleTableList: `${BASEURL}/roleTableList`, // 角色表格数据
+  addRole: `${BASEURL}/addRole`, // 添加角色
+  userTableList: `${BASEURL}/userTableList` // 添加角色
 }
 
 module.exports = APIURL
